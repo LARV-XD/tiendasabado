@@ -29,10 +29,52 @@ let productosBD = [
 
 ]
 
+//creo referencia al componente padre
+//creo una variable para almacenar la base
+//sobre la cual voy a pintar
+
+let fila=document.getElementById("fila")
+
+
+
 //Recorriendo un arreglo con js
 // buscar o selecconary esculcar
 
-    productosBD.forEach(function(producto){ console.log("Quiero una skate")})
+  // productosBD.forEach(function(producto){ console.log("Quiero una skate")})
+  productosBD.forEach(function(producto){ 
+      console.log(producto.nombre)
+      console.log(producto.precio)
+      console.log(producto.foto)
+      //receta para pintar con js
+      //paso 1 
+      //comienze a crear la estroctura que nesesite
+      //creo la columna
+      let columna=document.createElement("div")
+      columna.classList.add("col")
+
+      //creo la tarjeta
+      let tarjeta=document.createElement("div")
+      tarjeta.classList.add("card")
+      tarjeta.classList.add("h-100")
+
+      //creo la imagen
+      let foto=document.createElement("img")
+      foto.classList.add("card-img-top")
+      foto.src=producto.foto
+
+
+        //ordenar la estroctura
+      //crear padres e hijos
+
+      tarjeta.appendChild(foto)
+      columna.appendChild(tarjeta)
+      fila.appendChild(columna)
+
+
+
+
+
+})
     
 
 //escuchando clic en el boton
