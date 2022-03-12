@@ -4,7 +4,7 @@ comentario de bloque
 */
 
 
-
+/*
 //variables
 let nombreUsuario="Luis"
 let estaturaUsuario=1.77
@@ -36,4 +36,24 @@ let etiquetafotodarli=document.getElementById("darli")
 etiquetafotodarli.src="img/foto1.jpg"
 
 //salidas
-//console.log(nombreUsuario)
+//console.log(nombreUsuario)*/
+
+
+//importando modulos
+
+import{ pintarTienda} from './llenadoTienda.js'
+import{ampliarInformacion} from './ampliarinfo.js'
+
+    //llamando al modulo de pintar
+    pintarTienda()
+
+
+    // llamando al modulo ampliarinfo
+    let contenedorTienda=document.getElementById("fila")
+    contenedorTienda.addEventListener("click",function(event){
+
+        let modalinfoproducto = new bootstrap.Modal(document.getElementById('modalinfoproducto') )
+        ampliarInformacion(event)
+        modalinfoproducto.show()
+    })
+
